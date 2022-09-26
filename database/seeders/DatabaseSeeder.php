@@ -3,7 +3,10 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+use App\Models\Requisicao;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Auth;
 
 class DatabaseSeeder extends Seeder
 {
@@ -17,8 +20,12 @@ class DatabaseSeeder extends Seeder
         // \App\Models\User::factory(10)->create();
 
         \App\Models\User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
+            'name' => 'Adriano Barbosa',
+            'email' => 'teste@gmail.com',
         ]);
+
+        Requisicao::factory(10)->create(
+            
+        );
     }
 }

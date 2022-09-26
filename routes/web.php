@@ -1,5 +1,10 @@
 <?php
 
+use App\Http\Controllers\RequisicaoController;
+use App\Http\Controllers\SituacaoController;
+use App\Models\Procedimento;
+use App\Models\Requisicao;
+use App\Models\Situacao;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,9 +18,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Route::middleware([
     'auth:sanctum',
@@ -23,6 +28,33 @@ Route::middleware([
     'verified'
 ])->group(function () {
     Route::get('/dashboard', function () {
-        return view('dashboard');
+        return redirect('/');
     })->name('dashboard');
+    Route::get('/', function () {
+        return view('index');
+    })->name('index');
+    Route::get('/buscarRequisicao', function () {
+        return view('buscarRequisicao', ['requisicoes' => Requisicao::with('latestSituacao')->get()]);
+    })->name('buscarRequisicao');
+    Route::get('/cadastrarRequisicao', function () {
+
+        return view('cadastrarRequisicao', ['procedimentos' => Procedimento::all()]);
+    })->name('cadastrarRequisicao');
+
+    Route::get('/editarRequisicao/{requisicao}', function (Requisicao $requisicao) {
+        return view('editarRequisicao', ['requisicao' => $requisicao, 'procedimentos' => Procedimento::all()]);
+    })->name('editarRequisicao');
+
+    Route::post('/cadastrandoRequisicao', [RequisicaoController::class, 'create'])->name('cadastrandoRequisicao');
+    Route::put('/editandoRequisicao/{requisicao}', [RequisicaoController::class, 'update'])->name('editandoRequisicao');
+    Route::delete('/requisicao/delete/{requisicao?}', [RequisicaoController::class, 'delete'])->name('requisicao.delete');
+
+    Route::get(
+        '/novaSituacao/{requisicao}',
+        function (Requisicao $requisicao) {
+            return view('situacao-show', ['requisicao' => $requisicao]);
+        }
+    )->name('situacao.index');
+    Route::post('/criarSituacao/{requisicao}', [SituacaoController::class, 'create'])->name('situacao.create');
+    Route::get('/hitorico/{requisicao}', [SituacaoController::class, 'show'])->name('situacao.show');
 });

@@ -1,6 +1,6 @@
 @extends('layouts.template')
 
-@section('title', 'SeGePr - histórico')
+@section('title', 'SEProc - histórico')
 @section('pagina', 'Histórico da requisição')
 @section('pagina2', 'Histórico da requisição')
 @section('content')
@@ -59,7 +59,7 @@
                 <div class="card card-body">
                     <div class="container">
                         <div class="row">
-                            
+
                             <div class="col-3"><b>Dia: </b>{{$situacao->data}}</div>
                             <div class="col-12"><b>Descrição: </b>{{$situacao->descricao}}</div>
 

@@ -1,6 +1,6 @@
 @extends('layouts.template')
 
-@section('title', 'SeGePr - Cadastrar Requisição')
+@section('title', 'SEProc - Cadastrar Requisição')
 @section('pagina', 'Cadastrar Requisição')
 @section('pagina2', 'Cadastrar Requisição')
 @section('content')
@@ -14,8 +14,6 @@
         width: 25%;
         margin: 2%;
         height: 100%;
-
-
     }
 </style>
 @stop

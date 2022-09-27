@@ -1,6 +1,6 @@
 @extends('layouts.template')
 
-@section('title', 'SeGePr - Exibir Requisição')
+@section('title', 'SEProc - Exibir Requisição')
 @section('pagina', 'Exibir Requisição')
 @section('pagina2', 'Exibir Requisição')
 

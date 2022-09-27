@@ -1,6 +1,6 @@
 @extends('layouts.template')
 
-@section('title', 'SeGePr - Registrar nova situação')
+@section('title', 'SEProc - Registrar nova situação')
 @section('pagina', 'Registrar nova situação da requisição')
 @section('pagina2', 'Nova situação')
 @section('content')

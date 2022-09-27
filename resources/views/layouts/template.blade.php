@@ -64,7 +64,7 @@
         <div class="container d-flex align-items-center justify-content-between">
 
             <div class="logo">
-                <h1><a href="{{route('index')}}"><span>SeGePr</span></a></h1>
+                <h1><a href="{{route('index')}}"><span>SEProc</span></a></h1>
                 <!-- Uncomment below if you prefer to use an image logo -->
                 <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
             </div>
@@ -200,9 +200,9 @@
                             <h3>Adriano Barbosa</h3>
                             <p class="pb-3"><em>Desenvolvedor</em></p>
                             <p>
-                              Santo Amaro - Bahia <br>
+                                Santo Amaro - Bahia <br>
                                 CEP 44200000, BRASIL<br><br>
-                                
+
                                 <strong>Email: </strong>adrianobarbosa95@gmail.com<br>
                             </p>
                             <div class="social-links mt-3">
@@ -214,7 +214,7 @@
                             </div>
                         </div>
                     </div>
-  
+
                 </div>
             </div>
         </div>

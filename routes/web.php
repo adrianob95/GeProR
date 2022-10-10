@@ -5,6 +5,7 @@ use App\Http\Controllers\SituacaoController;
 use App\Models\Procedimento;
 use App\Models\Requisicao;
 use App\Models\Situacao;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -56,5 +57,11 @@ Route::middleware([
         }
     )->name('situacao.index');
     Route::post('/criarSituacao/{requisicao}', [SituacaoController::class, 'create'])->name('situacao.create');
-    Route::get('/hitorico/{requisicao}', [SituacaoController::class, 'show'])->name('situacao.show');
+    Route::get('/historico/{requisicao}', [SituacaoController::class, 'show'])->name('situacao.show');
+    
 });
+
+// Auth::routes();
+  Auth::routes(['register' => true]);
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+ 

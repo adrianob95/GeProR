@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Requisicao;
 use App\Models\Situacao;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class SituacaoController extends Controller
 {
@@ -12,6 +14,7 @@ class SituacaoController extends Controller
     {
         $req->merge([
             'requisicao_id' =>  $requisicao->id,
+            'user_id' =>  Auth::id(),
         ]);
 
         if (Situacao::create($req->all()))
@@ -21,7 +24,8 @@ class SituacaoController extends Controller
     public function show(Request $req, Requisicao $requisicao)
     {
         
-        return view('historico-show', ['requisicao' => $requisicao]);
+        $user = new User();
+        return view('historico-show', ['requisicao' => $requisicao, 'user' => $user]);
         // $req->merge([
         //     'requisicao_id' =>  $requisicao->id,
         // ]);

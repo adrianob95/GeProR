@@ -20,6 +20,7 @@ return new class extends Migration
             $table->date('data');
             $table->timestamps();
             $table->foreignId('requisicao_id')->constrained();
+            $table->foreignId('user_id')->constrained();
 
         });
     }

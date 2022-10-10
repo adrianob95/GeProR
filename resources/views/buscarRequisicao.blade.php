@@ -8,17 +8,17 @@
 <div class="container mt-3">
     <h2>Tabela de Requisições Cadastradas</h2>
     <p>
-        Digite algo no campo de entrada abaixo para pesquisar na tabela por paciente, procedimento ou endereço:
+        Digite algo no campo de entrada abaixo para pesquisar na tabela por paciente, procedimento, endereço e etc.:
     </p>
     <input class="form-control" id="myInput" type="text" placeholder="Procurar..">
     <br>
-    <table class="table table-bordered" style="text-align: center;">
+    <table class="table table-bordered table-hover" style="text-align: center;">
         <thead>
             <tr>
                 <th>Paciente</th>
                 <th>Procedimento</th>
                 <th>Documento</th>
-                <th>Cartão° SUS</th>
+
                 <th>Contato</th>
                 <th>Observação</th>
                 <th>Recebemos</th>
@@ -32,7 +32,6 @@
                 <td> <a href="{{route('situacao.show', $item->id)}}">{{$item->paciente}} </a></td>
                 <td> <a href="{{route('situacao.show', $item->id)}}">{{$item->procedimento}} </a></td>
                 <td> <a href="{{route('situacao.show', $item->id)}}">{{$item->documento}} </a></td>
-                <td> <a href="{{route('situacao.show', $item->id)}}">{{$item->sus}} </a></td>
                 <td> <a href="{{route('situacao.show', $item->id)}}">{{$item->contato}} </a></td>
                 <td> <a href="{{route('situacao.show', $item->id)}}">{{ mb_strimwidth($item->obs, 0, 15, "...") }}</a></td>
                 <td> <a href="{{route('situacao.show', $item->id)}}">{{ $item->datarecebido}}</a></td>
@@ -50,7 +49,7 @@
 
 
                     <button title="Exluir Requisição" data-toggle="modal" data-target="#exampleModal" data-whatever="{{ $item->id}}"><i class="bi-trash" style="font-size: 1.4rem; color: red;"></i></button>
-                    <a style="display: inline-block;" href="{{route('situacao.index', $item->id)}}"><i class="bi bi-list-ol" style="font-size: 1.4rem; color: black;"></i></a>
+                    <a style="display: inline-block;" title="Alterar a situação" href="{{route('situacao.index', $item->id)}}"><i class="bi bi-list-ol" style="font-size: 1.4rem; color: black;"></i></a>
 
 
 

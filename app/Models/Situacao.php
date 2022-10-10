@@ -14,5 +14,12 @@ class Situacao extends Model
         'descricao',
         'data',
         'requisicao_id',
+        'user_id',
     ];
+
+    public function usuario()
+    {
+        return $this->hasOne(User::class);
+    }
+
 }

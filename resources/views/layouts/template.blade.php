@@ -93,8 +93,8 @@
                                 <li><a href="{{ route('profile.show') }}">Perfil</a></li>
                                 <li class="dropdown"><a href="#"><span>Administrador</span> <i class="bi bi-chevron-down"></i></a>
                                     <ul>
-                                        <li><a href="{{route('cadastrarRequisicao')}}">Cadastrar novo usuario</a></li>
-                                        <li><a href="{{route('buscarRequisicao')}}">Contato</a></li>
+                                        <li><a href="{{route('register')}}">Cadastrar novo usuario</a></li>
+                                        <li><a href="#footer">Contato</a></li>
                                     </ul>
                                 </li>
                                 <li><a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
@@ -243,8 +243,8 @@
 
     <!-- Vendor JS Files -->
     <script src="{{ asset('assets/vendor/purecounter/purecounter_vanilla.js') }}">
-        < /scrip> <
-        script src = "{{ asset('assets/vendor/aos/aos.js') }}" >
+    </script>
+    <script src="{{ asset('assets/vendor/aos/aos.js') }}">
     </script>
     <script src="{{ asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('assets/vendor/glightbox/js/glightbox.min.js') }}"></script>
